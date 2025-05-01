@@ -43,5 +43,13 @@ fn main() {
     println!("Book Slices: {:?}", book_slices);
     
     //String vs String Slices(&str)
+    let mut stone_cold: String = String::from("Hell, ");
+    println!("Stone Cold Says: {}", stone_cold);
+    stone_cold.push_str("Yeah!");
+    println!("Stone Cold Says: {}", stone_cold);
     
+    //B- &str (String Slice
+    let string: String = String::from("Hello, World!");
+    let slice: &str = &string[0..5];
+    println!("Slice Value: {}", slice);
 }
