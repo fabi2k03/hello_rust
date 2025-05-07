@@ -7,16 +7,13 @@ The repository contains simple examples and experiments as I explore Rust’s sy
 
 ## Finished Topics
 The following topics have already been implemented
-* Primitive Data Types
-* Compound Data Type
-* Functions 
-  * (very little) -> more will follow
-
+* Common Programming Concepts
+  * Primitive Data Types
+  * Compound Data Type 
+  * Functions
+  *Control Flow
 ## Upcoming Topics
 The following topics will be implemented soon.
-* Common Programming Concepts
-  * Functions
-  * Control Flow
 * Ownership
 * Using Structs to Structure Related Data
 * Enums and Pattern Matching

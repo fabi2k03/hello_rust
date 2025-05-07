@@ -62,6 +62,23 @@ fn main() {
     print!("Addtion: {} + {}",x, y);
     let r: i32 = addition(x,y);
     println!(" = {}", r);
+    print_labeled_measurement(33, 'h');
+    println!("====================Control Flow=================================");
+    let mut number: i32 = 3;
+    
+    if number < 5 {
+        println!("condition (Number<5) was true");
+    }else{
+        println!("condition (Number<5>) was false");
+    }
+    
+    number = 7;
+    
+    if number < 5 {
+        println!("condition (Number<5) was true");
+    }else{
+        println!("condition (Number<5>) was false");
+    }
 }
 
 fn another_function(){
@@ -71,4 +88,7 @@ fn another_function(){
 fn addition(x: i32, y: i32) -> i32 {
     let result = x + y;
     return result;
+}
+fn print_labeled_measurement(value: i32, unit_label: char) {
+    println!("The measurement is: {value}{unit_label}");
 }
