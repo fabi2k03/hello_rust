@@ -11,7 +11,7 @@ The following topics have already been implemented
   * Primitive Data Types
   * Compound Data Type 
   * Functions
-  *Control Flow
+  * Control Flow
 ## Upcoming Topics
 The following topics will be implemented soon.
 * Ownership
