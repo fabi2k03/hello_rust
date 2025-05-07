@@ -1,3 +1,5 @@
+use std::hint::spin_loop;
+
 mod main2;
 
 fn main() {
@@ -64,21 +66,72 @@ fn main() {
     println!(" = {}", r);
     print_labeled_measurement(33, 'h');
     println!("====================Control Flow=================================");
+    println!("IF-STATEMENTS:");
     let mut number: i32 = 3;
-    
+
     if number < 5 {
         println!("condition (Number<5) was true");
     }else{
         println!("condition (Number<5>) was false");
     }
-    
+
     number = 7;
-    
+
     if number < 5 {
         println!("condition (Number<5) was true");
     }else{
         println!("condition (Number<5>) was false");
     }
+
+    let number2: i32 = 6;
+
+    if number2 % 4 == 0{
+        println!("number2 = {} is divisible by 4", number2);
+    } else if number2 % 3 == 0{
+        println!("number2 = {} is divisible by 3", number2);
+    }else if number2 % 2 == 0{
+        println!("number2 = {} is divisible by 2", number2);
+    }else{
+        println!("number2 = {} is not divisible by 4, 3 and 2", number2);
+    }
+
+    let condition: bool = true;
+    let number3 = if condition{ 5 }else{6};
+    println!("The value of number3: {}", number3);
+
+    //Loops
+    println!("LOOPS:");
+    let mut counter = 0;
+    let result = loop{
+        counter += 1;
+
+        if counter == 10{
+            break counter *2;
+        }
+    };
+
+    println!("Result: {}", result);
+    
+    println!("Multiple Loops:");
+    println!("---------------------");
+    let mut count = 0;
+    'counting_up: loop {
+        println!("count = {}", count);
+        let mut remaining = 10;
+
+        loop {
+            println!("remaining = {}", remaining);
+            if remaining == 9{
+                break;
+            }
+            if count == 2{
+                break 'counting_up;
+            }
+            remaining -= 1;
+        }
+        count += 1;
+    }
+    println!("End count {}", count);
 }
 
 fn another_function(){
