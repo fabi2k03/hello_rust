@@ -1,5 +1,3 @@
-use std::hint::spin_loop;
-
 mod main2;
 
 fn main() {
@@ -21,7 +19,7 @@ fn main() {
 
     // Compound Data Types
     println!("====================Compound Data Types=================================");
-    let numbers: [i32; 5] = [1, 2, 3, 4, 5];
+    //let numbers: [i32; 5] = [1, 2, 3, 4, 5];
     let fruits: [&str; 3] = ["apple", "pear", "lie"];
     let airplains: [&str; 3] = ["Aribaus A320", "Boeing 737 Max", "Aribus A380"];
     println!("Fruits Array: {:?}", fruits);
@@ -111,7 +109,7 @@ fn main() {
     };
 
     println!("Result: {}", result);
-    
+
     println!("Multiple Loops:");
     println!("---------------------");
     let mut count = 0;
@@ -132,6 +130,21 @@ fn main() {
         count += 1;
     }
     println!("End count {}", count);
+
+    println!("\nWhile-Loop:");
+    number = 3;
+
+    while number != 0 {
+        println!("number = {}", number);
+        number -= 1;
+    }
+
+    println!("\nfor-Loop:");
+    let a:[i32; 5] = [10,20,30,40,50];
+
+    for i in 0..a.len(){
+        println!("Element at index {}: {}", i, a[i]);
+    }
 }
 
 fn another_function(){
