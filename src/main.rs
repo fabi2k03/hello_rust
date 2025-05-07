@@ -21,10 +21,13 @@ fn main() {
     println!("====================Compound Data Types=================================");
     let numbers: [i32; 5] = [1, 2, 3, 4, 5];
     let fruits: [&str; 3] = ["apple", "pear", "lie"];
+    let airplains: [&str; 3] = ["Aribaus A320", "Boeing 737 Max", "Aribus A380"];
     println!("Fruits Array: {:?}", fruits);
     println!("Fruits Array 1st Element: {}", fruits[0]);
     println!("Fruits Array 2st Element: {}", fruits[1]);
     println!("Fruits Array 3st Element: {}", fruits[2]);
+    //Print airplains
+    println!("AirPlains: {:?}", airplains);
 
     // Tuples
     let human: (String, i32, bool) = ("Alice".to_string(), 30, false);
