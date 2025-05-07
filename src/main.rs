@@ -55,4 +55,20 @@ fn main() {
     let string: String = String::from("Hello, World!");
     let slice: &str = &string[0..5];
     println!("Slice Value: {}", slice);
+    println!("====================Functions=================================");
+    another_function();
+    let x: i32 = 5;
+    let y: i32 = 10;
+    print!("Addtion: {} + {}",x, y);
+    let r: i32 = addition(x,y);
+    println!(" = {}", r);
+}
+
+fn another_function(){
+    println!("Another function.");
+}
+
+fn addition(x: i32, y: i32) -> i32 {
+    let result = x + y;
+    return result;
 }
