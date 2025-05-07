@@ -1,14 +1,19 @@
 # Hello Rust
 
-With this Rust project I want to get to know the world of Rust development. I will first look at the basics of Rust and work my way up to more complex tasks.
+This Rust project is my personal entry point into the world of Rust development.
+I will start by learning the basics of the language and gradually work my way up to more complex tasks and concepts.
 
+The repository contains simple examples and experiments as I explore Rust’s syntax, tooling, and best practices.
+
+## Finished Topics
 The following topics have already been implemented
 * Primitive Data Types
 * Compound Data Type
 * Functions 
   * (very little) -> more will follow
 
-Upcoming Topics
+## Upcoming Topics
+The following topics will be implemented soon.
 * Common Programming Concepts
   * Functions
   * Control Flow
