@@ -145,6 +145,10 @@ fn main() {
     for i in 0..a.len(){
         println!("Element at index {}: {}", i, a[i]);
     }
+    
+    //Reverse Numbers
+    println!("\nReverse Numbers:");
+    reverse_range();
 }
 
 fn another_function(){
@@ -157,4 +161,10 @@ fn addition(x: i32, y: i32) -> i32 {
 }
 fn print_labeled_measurement(value: i32, unit_label: char) {
     println!("The measurement is: {value}{unit_label}");
+}
+
+fn reverse_range(){
+    for number in (1..4+1).rev(){
+        println!("{}", number);
+    }
 }
