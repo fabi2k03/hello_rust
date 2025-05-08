@@ -145,10 +145,47 @@ fn main() {
     for i in 0..a.len(){
         println!("Element at index {}: {}", i, a[i]);
     }
-    
+
     //Reverse Numbers
     println!("\nReverse Numbers:");
     reverse_range();
+
+    println!("\n====================Ownership=================================\n");
+    let mut s = String::from("hello");
+    s.push_str(", world!");
+    println!("{}", s);
+
+    let x = 5;
+    let y = x;
+
+    let mut s1 = String::from("hello");
+    s1 = String::from("ahoi");
+
+    println!("{}, world!", s1);
+
+    let mut s2 = String::from("hello");
+    let s3 = s2.clone();
+    println!("s2 = {}, s3 = {}", s2, s3);
+
+    let s4 = String::from("hello");
+    take_ownership(s4);                         // s's value moves into the function...
+                                                // ... and so is no longer valid here
+    // println!("{s4}!");
+    let x1 = 5;
+    make_copy(x1);                              // because i32 implements the Copy trait,
+                                                // x does NOT move into the function,
+                                                    // so it's okay to use x afterward
+    println!("x1 = {}", x1);
+
+    let s1 = gives_ownership();
+    let s2 = String::from("hello");
+    let s3 = takes_and_gives_back(s2);
+
+    let s1 = String::from("hello");
+    let (s2, len) = calculate_length(s1);
+
+    println!("The length of {} is {}", s2, len);
+
 }
 
 fn another_function(){
@@ -167,4 +204,28 @@ fn reverse_range(){
     for number in (1..4+1).rev(){
         println!("{}", number);
     }
+}
+
+fn take_ownership(some_string: String){
+    println!("{some_string}");
+}// Here, some_string goes out of scope and `drop` is called. The backing
+// memory is freed.
+
+fn make_copy(some_integer: i32) {
+    println!("{some_integer}");
+}// Here, some_integer goes out of scope. Nothing special happens.
+
+fn gives_ownership() -> String{
+    let some_string = String::from("yours");
+    some_string
+}
+
+fn takes_and_gives_back(a_string: String) -> String{
+    a_string
+}
+
+fn calculate_length(s: String)->(String, usize){
+    let length = s.len();
+
+    (s, length)
 }
