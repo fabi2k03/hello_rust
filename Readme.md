@@ -12,14 +12,17 @@ The following topics have already been implemented
   * Compound Data Type 
   * Functions
   * Control Flow
-## Topics in progress
-* Ownership
-  * What is ownership?
+* Ownership 
+  * What is ownership? 
   * References and Borrowing
   * The Slice Type
+## Topics in progress
+* Using Structs to Structure Related Data
+  * Defining and Instantiating Structs
+  * An Example Program using Structs
+  * Method Syntax
 ## Upcoming Topics
 The following topics will be implemented soon.
-* Using Structs to Structure Related Data
 * Enums and Pattern Matching
 * Managing Growing Projects with Packages, Crates, and Modules
 * Common Collections

@@ -202,6 +202,37 @@ fn main() {
         let r1 = &mut s;
     }// r1 goes out of scope here, so we can make a new reference with no problems.as 
     let r2 = &mut s;
+
+    println!("\n====================The Slice Type=================================\n");
+    let mut sSlice = String::from("hello world");
+    let word = first_word(&sSlice);
+    
+    //String slices
+    let hello = &sSlice[0..5];
+    let world = &sSlice[6..11];
+    
+    let len = sSlice.len();
+    let slice = &sSlice[3..len];
+    let slice = &sSlice[3..];
+    
+    println!("The slice type is: **{}** and **{}**", hello, world);
+    
+    let my_string = String::from("hello world");
+    //`first_word` works on slices of `string`, whether partial or whole
+    let word = first_word(&my_string[0..6]);
+    let word = first_word(&my_string[..]);
+    // `first_word` also works on references to `String`s, which are equivalent
+    // to whole slices of `String`s
+    let word = first_word(&my_string);
+    
+    let my_string_literal = "hello world";
+    // `first_word` works on slices of string literals, whether partial or whole
+    let word = first_word(&my_string_literal[0..6]);
+    let word = first_word(&my_string_literal[..]);
+
+    // Because string literals *are* string slices already,
+    // this works too, without the slice syntax!
+    let word = first_word(my_string_literal);
 }
 
 fn another_function(){
@@ -247,3 +278,16 @@ fn calculate_length(s: &String) -> usize{
 fn change(some_string: &mut String){
     some_string.push_str(", world");
 }
+
+fn first_word(s: &str)-> &str{
+    let bytes = s.as_bytes();
+    
+    for (i, &item) in bytes.iter().enumerate(){
+        if item == b' '{
+            return &s[0..i];
+        }
+    }
+    
+    &s[..]
+}
+
