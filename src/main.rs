@@ -182,10 +182,26 @@ fn main() {
     let s3 = takes_and_gives_back(s2);
 
     let s1 = String::from("hello");
-    let (s2, len) = calculate_length(s1);
+   // let (s2, len) = calculate_length(s1);
 
-    println!("The length of {} is {}", s2, len);
+   // println!("The length of {} is {}", s2, len);
 
+    println!("\n====================Reference and Borrowing=================================\n");
+    //Reference and Borrowing
+    let mut s1 = String::from("hello");
+    let len = calculate_length(&s1);
+    println!("The len length of {s1} is {len}.");
+
+    //Mutable References
+    let mut s = String::from("hello");
+    change(&mut s);
+    
+    let mut s = String::from("hello");
+
+    {
+        let r1 = &mut s;
+    }// r1 goes out of scope here, so we can make a new reference with no problems.as 
+    let r2 = &mut s;
 }
 
 fn another_function(){
@@ -224,8 +240,10 @@ fn takes_and_gives_back(a_string: String) -> String{
     a_string
 }
 
-fn calculate_length(s: String)->(String, usize){
-    let length = s.len();
+fn calculate_length(s: &String) -> usize{
+    s.len()
+}
 
-    (s, length)
+fn change(some_string: &mut String){
+    some_string.push_str(", world");
 }
