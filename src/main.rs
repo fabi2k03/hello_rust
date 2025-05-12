@@ -1,5 +1,17 @@
 mod main2;
 
+struct User{
+    active: bool,
+    username: String,
+    email: String,
+    sign_in_count: u64,
+}
+
+struct Color(i32, i32, i32);
+struct Point(i32, i32, i32);
+
+struct AlwaysEqual;
+
 fn main() {
     //Primitive Data Types
     println!("====================Primitive Data Types=================================");
@@ -234,6 +246,31 @@ fn main() {
     // Because string literals *are* string slices already,
     // this works too, without the slice syntax!
     let word = first_word(my_string_literal);
+
+    println!("\n====================Defining and Instantiating Structs=================================\n");
+
+    let mut user1 = User{
+        active: true,
+        username: String::from("someuser123"),
+        email: String::from("someuser@user.at"),
+        sign_in_count: 1,
+    };
+
+    user1.email = String::from("someuser123@user.at");
+    //--Snip--
+
+    let user2 = User{
+        active: user1.active,
+        username: user1.username,
+        email: String::from("example@email.com"),
+        sign_in_count: user1.sign_in_count,
+    };
+
+    println!("User1's email is: {}", user2.email);
+
+    let black = Color(0,0,0);
+    let white = Point(0,0,0);
+    let subject = AlwaysEqual;
 }
 
 fn another_function(){
@@ -292,3 +329,11 @@ fn first_word(s: &str)-> &str{
     &s[..]
 }
 
+fn build_user(email: String, username: String) -> User{
+    User{
+        active: true,
+        username: username,
+        email: email,
+        sign_in_count: 1,
+    }
+}
